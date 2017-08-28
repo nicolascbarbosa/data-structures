@@ -24,34 +24,8 @@ class Stack {
   pop() {
     let len = this.stack.length - 1;
 
-    //delete this.stack.splice(len, 1); //or .pop
-    //delete this.stack_min.splice(len, 1); //or .pop
-
-    //OR 
-
-    delete this.stack[len];
-    delete this.stack_min[len];
-
-    let auxStack = [];
-
-    this.stack.forEach((item, index) => {
-      if(item) {
-        auxStack[index] = item;      
-      }
-    });
-
-    this.stack = auxStack;
-
-
-    let auxStackMin = [];
-
-    this.stack_min.forEach((item, index) => {
-      if(item) {
-        auxStackMin[index] = item;      
-      }
-    });
-
-    this.stack_min = auxStackMin;
+    delete this.stack.splice(len, 1); //or .pop
+    delete this.stack_min.splice(len, 1); //or .pop
   }
 
   get Minimum() {
