@@ -51,25 +51,6 @@ void show_min()
         printf("\nmenor elemento: %d\n", *base_min);
 }
 
-void show_stack()
-{
-    if(*stack_length == 0)
-        printf("\nA pilha esta vazia!!\n");
-    else
-    {
-        int * aux;
-        int i, len;
-
-        len = *stack_length;
-        aux = base;
-        printf("\nElementos da pilha:\n");
-        for(i = len - 1; i >= 0; i--)
-        {
-            printf("%d\n", *aux);
-            aux--;
-        }
-    }
-}
 
 int main()
 {
@@ -83,35 +64,31 @@ int main()
     {
         while(1)
         {
-            printf("Digite 1 para mostrar todos os elementos\n");
-            printf("Digite 2 para inserir\n");
-            printf("Digite 3 para retirar\n");
-            printf("Digite 4 para mostrar o menor elemento\n");            
-            printf("Digite 5 para sair\n");
+            printf("Digite 1 para inserir\n");
+            printf("Digite 2 para retirar\n");
+            printf("Digite 3 para mostrar o menor elemento\n");            
+            printf("Digite 4 para sair\n");
             printf("Opcao: ");
             scanf("%d", &option);
-            if(option < 1 || option > 5)
+            if(option < 1 || option > 4)
                 printf("\nOpcao invalida, tente novamente...\n");
             break;            
         }
         
         switch(option) 
         {
-            case 1: 
-                show_stack();
-                break;
-            case 2:
+            case 1:
                 printf("\nDigite o valor: ");
                 scanf("%d", &value);
                 push(value);
                 break;
-            case 3:
+            case 2:
                 pop();                
             break;
-            case 4:
+            case 3:
                 show_min();
             break;
-            case 5:
+            case 4:
                 option_exit = 1;
             break;
         }
