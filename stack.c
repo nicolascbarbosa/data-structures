@@ -19,18 +19,13 @@ void push(int value)
 
     if(value >= elem_minimum) 
     {
-        if(*stack_length == 1) {
+        if(*stack_length == 1)
             elem_minimum = value;          
-        }
-
-        *base_min = elem_minimum;        
     } else {
         elem_minimum = value;       
-        *base_min = elem_minimum;
     }
 
-    printf("\nElemento: %d\n", elem_minimum);
-
+    *base_min = elem_minimum;            
     *base = value; 
     printf("\nelemento inserido!\n");
 }
